@@ -1,0 +1,273 @@
+[
+  {
+    "id": 16,
+    "name": "Big display card",
+    "design_type": "HC3",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "Big display card",
+        "title": "Big display card with action",
+        "formatted_title": {
+          "text": "{} {}",
+          "entities": [
+            {
+              "text": "Big display card",
+              "type": "generic_text",
+              "color": "#fbaf03",
+              "other_url": "https://example.org/link1",
+              "url_choice": "oth",
+              "url": "https://example.org/link1"
+            },
+            {
+              "text": "with action",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "description": "This is a sample text for the subtitle that you can add to contextual cards",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "text": "This is a sample text for the subtitle that you can add to contextual cards",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_image": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/2a650f966e1f4a2e81bdbbb118fb2e73.png",
+          "asset_type": "test1"
+        },
+        "bg_color": "#454aa6",
+        "cta": [
+          {
+            "text": "Action",
+            "bg_color": "#000000",
+            "other_url": "https://www.instagram.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "oth",
+            "url": "https://www.instagram.com/fampay.in/"
+          }
+        ]
+      }
+    ],
+    "is_scrollable": false
+  },
+  {
+    "id": 17,
+    "name": "Small card with arrow",
+    "design_type": "HC6",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "small card with arrow",
+        "title": "Small card with arrow",
+        "formatted_title": {
+          "text": "Small card with arrow",
+          "entities": []
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/e154e9ddcb8a42ff94a926cb2d7927d8.png",
+          "asset_type": "icon png"
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_color": "#ffffff"
+      }
+    ],
+    "is_scrollable": false
+  },
+  {
+    "id": 18,
+    "name": "image card",
+    "design_type": "HC5",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "image card",
+        "url": "fp://fampay.in/open/",
+        "bg_image": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/5cb0d958af964354a728dd5c04537e1d.png",
+          "asset_type": "image"
+        },
+        "bg_color": "#f8f4dd"
+      }
+    ],
+    "is_scrollable": false
+  },
+  {
+    "id": 20,
+    "name": "center card",
+    "design_type": "HC4",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "center card",
+        "title": "John Doe",
+        "formatted_title": {
+          "text": "{}",
+          "entities": [
+            {
+              "type": "generic_text",
+              "color": "#000000",
+              "url": "http://example.com/link1",
+              "text": "John Doe"
+            }
+          ]
+        },
+        "description": "Center Card",
+        "formatted_description": {
+          "text": "Center Card",
+          "align": "center",
+          "entities": []
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/13c07b132b69446cb25f05170c8c00bd.png",
+          "asset_type": "arya dp"
+        },
+        "url": "https://www.instagram.com/fampay.in/",
+        "bg_gradient": {
+          "angle": 60,
+          "colors": [
+            "#fbaf03",
+            "#ffd428"
+          ]
+        },
+        "cta": [
+          {
+            "text": "Action 1",
+            "bg_color": "#000000",
+            "other_url": "https://www.fb.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "oth",
+            "url": "https://www.fb.com/fampay.in/"
+          },
+          {
+            "text": "Action 2",
+            "bg_color": "#000000",
+            "other_url": "https://www.instagram.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "fam",
+            "url": "http://example.com/link2"
+          }
+        ]
+      }
+    ],
+    "is_scrollable": false
+  },
+  {
+    "id": 21,
+    "name": "small display card",
+    "design_type": "HC1",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "small card with arrow",
+        "title": "Small card with arrow",
+        "formatted_title": {
+          "text": "Small card with arrow",
+          "entities": []
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/e154e9ddcb8a42ff94a926cb2d7927d8.png",
+          "asset_type": "icon png"
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_color": "#ffffff"
+      },
+      {
+        "name": "small display card",
+        "title": "Small display card",
+        "formatted_title": {
+          "text": "Small display card",
+          "entities": []
+        },
+        "description": "John",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "type": "generic_text",
+              "color": "#000000",
+              "font_style": "underline",
+              "url_choice": "fam",
+              "font_family": "met_regular",
+              "url": "http://example.com/link1",
+              "text": "John"
+            }
+          ]
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/13c07b132b69446cb25f05170c8c00bd.png",
+          "asset_type": "arya dp"
+        },
+        "url": "https://www.instagram.com/fampay.in/",
+        "bg_color": "#fbaf03"
+      }
+    ],
+    "is_scrollable": true
+  },
+  {
+    "id": 49,
+    "name": "small display cardr not scrollable",
+    "design_type": "HC1",
+    "card_type": 1,
+    "cards": [
+      {
+        "name": "small card with arrow",
+        "title": "Small card with arrow",
+        "formatted_title": {
+          "text": "Small card with arrow",
+          "entities": []
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/e154e9ddcb8a42ff94a926cb2d7927d8.png",
+          "asset_type": "icon png"
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_color": "#ffffff"
+      },
+      {
+        "name": "small display card",
+        "title": "Small display card",
+        "formatted_title": {
+          "text": "Small display card",
+          "entities": []
+        },
+        "description": "John",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "type": "generic_text",
+              "color": "#000000",
+              "font_style": "underline",
+              "url_choice": "fam",
+              "font_family": "met_regular",
+              "url": "http://example.com/link1",
+              "text": "John"
+            }
+          ]
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/13c07b132b69446cb25f05170c8c00bd.png",
+          "asset_type": "arya dp"
+        },
+        "url": "https://www.instagram.com/fampay.in/",
+        "bg_color": "#fbaf03"
+      }
+    ],
+    "is_scrollable": false
+  }
+]
