@@ -10,6 +10,8 @@
 ### 👽 3rd party
  - [KingFisher](https://github.com/onevcat/Kingfisher) - To load images asynchronously
 
+## Architecture
+ - MVVM using Combine
 
 ## ⚠️ Note
 ### [`FormattedTextView`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/ContextualCards/BigDisplayContextualCard/FormattedTextView.swift)
