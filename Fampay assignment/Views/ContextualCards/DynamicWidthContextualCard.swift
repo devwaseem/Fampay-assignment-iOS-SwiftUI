@@ -57,13 +57,14 @@ fileprivate struct DynamicWidthContextualSingleCard: View {
                 .onTapGesture {
                     handleUrl(url: data.url)
                 }
-         } else {
-             (backgroundColor?.color ?? .clear)
+        } else if let backgroundColor = data.backgroundColor {
+             backgroundColor.color
                 .onTapGesture {
                     handleUrl(url: data.url)
                 }
-                
-         }
+        } else {
+          EmptyView()
+        }
         
     }
     

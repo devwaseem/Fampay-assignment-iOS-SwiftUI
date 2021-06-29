@@ -43,8 +43,10 @@ struct CardBackgroundView: View {
         } else if let backgroundGradient = cardData.backgroundGradient,
                  let colors = backgroundGradient.colors?.compactMap({ $0.color }) {
             AngularGradient(gradient: Gradient(colors: colors), center: .center, angle: .degrees(Double(backgroundGradient.angle ?? 0)))
+        } else if let backgroundColor = cardData.backgroundColor {
+            backgroundColor.color
         } else {
-            backgroundColor?.color ?? .clear
+            EmptyView()
         }
     }
 }

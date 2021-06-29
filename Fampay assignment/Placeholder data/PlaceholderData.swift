@@ -50,4 +50,3 @@ let jsonDecoder: JSONDecoder = {
 let path = Bundle.main.path(forResource: "sample_response", ofType: "json")
 let data = FileManager.default.contents(atPath: path!)
 var placeholderData = try! jsonDecoder.decode([ContextualCardGroup].self, from: data!).filter { $0.designType != .unsupported }
-//placeholderData = placeholderData

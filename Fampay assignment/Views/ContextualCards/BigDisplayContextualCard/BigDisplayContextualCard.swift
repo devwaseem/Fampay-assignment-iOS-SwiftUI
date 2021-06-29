@@ -12,20 +12,20 @@ struct BigDisplayContextualCard: View {
     
     let cardGroup: ContextualCardGroup
     let width: CGFloat
-        
+            
     var body: some View {
         if cardGroup.isScrollable, let cards = cardGroup.cards {
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(0 ..< cards.count) { index in
-                        BigDisplayContextualSingleCard(data: cards[index])
+                        BigDisplayContextualSingleCard(cardGroupId: cardGroup.id, data: cards[index])
                             .frame(width: width * 0.9, height: width * 0.9 * 1.094)
                     }
                 }
                 .frame(maxWidth: .infinity)
             }
         } else if let cardData = cardGroup.cards?.first {
-            BigDisplayContextualSingleCard(data: cardData)
+            BigDisplayContextualSingleCard(cardGroupId: cardGroup.id, data: cardData)
                 .frame(width: width, height: width * 1.094)
         } else {
             EmptyView()
@@ -35,8 +35,9 @@ struct BigDisplayContextualCard: View {
 
 fileprivate struct BigDisplayContextualSingleCard: View {
     
+    var cardGroupId: Int
     var data: ContextualCard
-    
+        
     @State private var isExpanded = false
 //    @State private var size: CGSize = .zero
     
@@ -44,7 +45,7 @@ fileprivate struct BigDisplayContextualSingleCard: View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
             GeometryReader { proxy in
                 
-                BigDisplayContextualCardActionView(data: data)
+                BigDisplayContextualCardActionView(cardGroupId: cardGroupId, data: data)
                     .frame(width: proxy.frame(in: .local).width * 0.4)
                     .background(Color.white)
                     .onTapGesture {
@@ -75,12 +76,19 @@ fileprivate struct BigDisplayContextualSingleCard: View {
 
 private struct BigDisplayContextualCardActionView: View {
     
+    
+    
+    @EnvironmentObject var viewModel: ContextualCardViewModel
+    
+    let cardGroupId: Int
     let data: ContextualCard
+    
+    
     var body: some View {
         VStack {
             Spacer()
             Button(action: {
-                
+                viewModel.remindLaterBigDisplayCard(id: cardGroupId)
             }, label: {
                 VStack {
                     Image("bell")
@@ -97,7 +105,7 @@ private struct BigDisplayContextualCardActionView: View {
             .cornerRadius(12)
             
             Button(action: {
-                
+                viewModel.dismissBigDisplaycard(id: cardGroupId)
             }, label: {
                 VStack {
                     Image("clear")

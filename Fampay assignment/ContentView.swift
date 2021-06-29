@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     
     @State var isRefreshing = false
-    @StateObject var viewModel = ContextualCardViewModel()
+    @StateObject var viewModel = ContextualCardViewModel(bigDisplayCardReminderRepo: .init())
     
     var body: some View {
         GeometryReader { parentProxy in
@@ -31,6 +31,7 @@ struct ContentView: View {
                             ForEach(viewModel.cardGroups ?? []) { cardData in
                                 ContextualCardView(cardGroup: cardData, width: width)
                                     .padding(.top, 2)
+                                    .environmentObject(viewModel)
                             }
                         }
                         .padding(.bottom, 300)

@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		7566B499268B042F00066723 /* ContextualImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B498268B042F00066723 /* ContextualImageCard.swift */; };
 		7566B49B268B31B700066723 /* DynamicWidthContextualCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B49A268B31B700066723 /* DynamicWidthContextualCard.swift */; };
-		757B29C62689A30000EEE779 /* PlaceholderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B29C52689A30000EEE779 /* PlaceholderData.swift */; };
+		7566B49E268B7D2600066723 /* BigDisplayCardReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B49D268B7D2600066723 /* BigDisplayCardReminder.swift */; };
+		7566B4BC268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B4BA268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataProperties.swift */; };
+		7566B4BD268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B4BB268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift */; };
+		7566B4C2268B9BE200066723 /* PlaceholderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B4C1268B9BE200066723 /* PlaceholderData.swift */; };
+		7566B4C4268B9C0B00066723 /* sample_response.json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7566B4C3268B9C0B00066723 /* sample_response.json.txt */; };
 		757B29CB2689B9AE00EEE779 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B29CA2689B9AE00EEE779 /* UIFont + Extensions.swift */; };
 		757EE2432689E61B000CD124 /* FlexibleHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE2422689E61B000CD124 /* FlexibleHGrid.swift */; };
 		757EE2462689F5DF000CD124 /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE2452689F5DF000CD124 /* FormattedTextView.swift */; };
 		757EE249268A040B000CD124 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 757EE248268A040B000CD124 /* Kingfisher */; };
 		757EE24B268A32EE000CD124 /* CardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE24A268A32EE000CD124 /* CardBackgroundView.swift */; };
 		757EE24D268A3749000CD124 /* SmallDisplayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE24C268A3749000CD124 /* SmallDisplayCard.swift */; };
-		757EE24F268A4A25000CD124 /* sample_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 757EE24E268A4A25000CD124 /* sample_response.json */; };
 		757EE251268A4B70000CD124 /* ContextualCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE250268A4B70000CD124 /* ContextualCardView.swift */; };
 		75ACBCA42687662D0026CFAF /* Fampay_assignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACBCA32687662D0026CFAF /* Fampay_assignmentApp.swift */; };
 		75ACBCA62687662D0026CFAF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACBCA52687662D0026CFAF /* ContentView.swift */; };
@@ -65,13 +68,16 @@
 /* Begin PBXFileReference section */
 		7566B498268B042F00066723 /* ContextualImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextualImageCard.swift; sourceTree = "<group>"; };
 		7566B49A268B31B700066723 /* DynamicWidthContextualCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicWidthContextualCard.swift; sourceTree = "<group>"; };
-		757B29C52689A30000EEE779 /* PlaceholderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderData.swift; sourceTree = "<group>"; };
+		7566B49D268B7D2600066723 /* BigDisplayCardReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDisplayCardReminder.swift; sourceTree = "<group>"; };
+		7566B4BA268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDBigDisplayCardReminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7566B4BB268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDBigDisplayCardReminder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7566B4C1268B9BE200066723 /* PlaceholderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderData.swift; sourceTree = "<group>"; };
+		7566B4C3268B9C0B00066723 /* sample_response.json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_response.json.txt; sourceTree = "<group>"; };
 		757B29CA2689B9AE00EEE779 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		757EE2422689E61B000CD124 /* FlexibleHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHGrid.swift; sourceTree = "<group>"; };
 		757EE2452689F5DF000CD124 /* FormattedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
 		757EE24A268A32EE000CD124 /* CardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackgroundView.swift; sourceTree = "<group>"; };
 		757EE24C268A3749000CD124 /* SmallDisplayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDisplayCard.swift; sourceTree = "<group>"; };
-		757EE24E268A4A25000CD124 /* sample_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_response.json; path = MyPlayground.playground/Resources/sample_response.json; sourceTree = SOURCE_ROOT; };
 		757EE250268A4B70000CD124 /* ContextualCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextualCardView.swift; sourceTree = "<group>"; };
 		75ACBCA02687662D0026CFAF /* Fampay assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fampay assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75ACBCA32687662D0026CFAF /* Fampay_assignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fampay_assignmentApp.swift; sourceTree = "<group>"; };
@@ -132,13 +138,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		757B29C42689A2F200EEE779 /* Placholder data */ = {
+		7566B49C268B7BDC00066723 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				757EE24E268A4A25000CD124 /* sample_response.json */,
-				757B29C52689A30000EEE779 /* PlaceholderData.swift */,
+				7566B49D268B7D2600066723 /* BigDisplayCardReminder.swift */,
 			);
-			path = "Placholder data";
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7566B49F268B7F3300066723 /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				7566B4BB268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift */,
+				7566B4BA268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataProperties.swift */,
+			);
+			path = Coredata;
+			sourceTree = "<group>";
+		};
+		7566B4C0268B9AE200066723 /* Placeholder data */ = {
+			isa = PBXGroup;
+			children = (
+				7566B4C3268B9C0B00066723 /* sample_response.json.txt */,
+				7566B4C1268B9BE200066723 /* PlaceholderData.swift */,
+			);
+			path = "Placeholder data";
 			sourceTree = "<group>";
 		};
 		757EE2442689F5CB000CD124 /* BigDisplayContextualCard */ = {
@@ -173,7 +196,8 @@
 		75ACBCA22687662D0026CFAF /* Fampay assignment */ = {
 			isa = PBXGroup;
 			children = (
-				757B29C42689A2F200EEE779 /* Placholder data */,
+				7566B4C0268B9AE200066723 /* Placeholder data */,
+				7566B49C268B7BDC00066723 /* Repository */,
 				75FCB14226885DB1007045BC /* Extensions */,
 				75ACBCD626876DF40026CFAF /* Network */,
 				75ACBCD526876D510026CFAF /* ViewModels */,
@@ -230,6 +254,7 @@
 		75ACBCD426876D4B0026CFAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7566B49F268B7F3300066723 /* Coredata */,
 				75ACBCF1268780850026CFAF /* Network */,
 				75ACBCD9268770000026CFAF /* DesignTypes.swift */,
 				75ACBCD726876FE00026CFAF /* ContextualCardGroup.swift */,
@@ -416,9 +441,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				757EE24F268A4A25000CD124 /* sample_response.json in Resources */,
 				75ACBCAB2687662F0026CFAF /* Preview Assets.xcassets in Resources */,
 				75ACBCA82687662F0026CFAF /* Assets.xcassets in Resources */,
+				7566B4C4268B9C0B00066723 /* sample_response.json.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +471,7 @@
 			files = (
 				757EE251268A4B70000CD124 /* ContextualCardView.swift in Sources */,
 				75ACBCDE268774680026CFAF /* ContextualCardImage.swift in Sources */,
+				7566B4BC268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataProperties.swift in Sources */,
 				75FCB14B268908C6007045BC /* ContextualCardViewModel.swift in Sources */,
 				757EE24D268A3749000CD124 /* SmallDisplayCard.swift in Sources */,
 				75ACBCB02687662F0026CFAF /* Fampay_assignment.xcdatamodeld in Sources */,
@@ -456,7 +482,9 @@
 				75FCB14426885DC5007045BC /* View + Extensions.swift in Sources */,
 				75FCB149268865A1007045BC /* SmallCardWithArrow.swift in Sources */,
 				75ACBD052687ABFF0026CFAF /* RefreshableScrollView.swift in Sources */,
+				7566B4C2268B9BE200066723 /* PlaceholderData.swift in Sources */,
 				75ACBCAD2687662F0026CFAF /* Persistence.swift in Sources */,
+				7566B49E268B7D2600066723 /* BigDisplayCardReminder.swift in Sources */,
 				75ACBCE4268774C10026CFAF /* APISimulator.swift in Sources */,
 				75ACBCE02687747A0026CFAF /* ContextualCardGradient.swift in Sources */,
 				75ACBCDA268770000026CFAF /* DesignTypes.swift in Sources */,
@@ -469,7 +497,7 @@
 				75ACBCA62687662D0026CFAF /* ContentView.swift in Sources */,
 				757EE2432689E61B000CD124 /* FlexibleHGrid.swift in Sources */,
 				75ACBCF3268780920026CFAF /* NetworkError.swift in Sources */,
-				757B29C62689A30000EEE779 /* PlaceholderData.swift in Sources */,
+				7566B4BD268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift in Sources */,
 				75ACBCA42687662D0026CFAF /* Fampay_assignmentApp.swift in Sources */,
 				75ACBCE22687748D0026CFAF /* ContextualCardCTA.swift in Sources */,
 			);

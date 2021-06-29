@@ -70,6 +70,7 @@ struct RefreshableScrollView<Content: View>: View {
                     canRefresh = true
                 }
             })
+
             .coordinateSpace(name: refreshableScrollViewFrameLayer)
         }
     }

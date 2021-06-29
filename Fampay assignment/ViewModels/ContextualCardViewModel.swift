@@ -10,15 +10,21 @@ import Combine
 
 class ContextualCardViewModel: ObservableObject {
     
+    var bigDisplayCardReminderRepo: BigDisplayCardIgnoringListRepository
+    
     @Published var isRefreshing = false
     @Published var isAlertPresenting = false
     @Published var alertTitle = ""
     @Published var cardGroups: [ContextualCardGroup]?
     
-    var cancellables: Set<AnyCancellable> = []
+    private var sessionIgnoredCardIdList = [Int]()
+    private var cancellables: Set<AnyCancellable> = []
+    
+    init(bigDisplayCardReminderRepo: BigDisplayCardIgnoringListRepository) {
+        self.bigDisplayCardReminderRepo = bigDisplayCardReminderRepo
+    }
     
     func fetchCardsGroup() {
-        print("fetching")
         self.isRefreshing = true
         let mockApiUrl = URL(string: "http://www.mocky.io/v2/5ed79368320000a0cc27498b")!
         let cardGroupPublisher: AnyPublisher<[ContextualCardGroup], NetworkError> = FampayAPISimulator.shared
@@ -26,10 +32,17 @@ class ContextualCardViewModel: ObservableObject {
         
         cardGroupPublisher
             .receive(on: DispatchQueue.main)
-            .map {
-                // $0 -> the data received is an array, so we map and filter
-                $0.filter {
-                    $0.designType != .unsupported // remove the unsupported card types
+            .zip(bigDisplayCardReminderRepo.getAll()
+                    .replaceEmpty(with: [])
+                    .eraseToAnyPublisher()
+                    .mapError { _ in
+                        NetworkError.unknown(code: 0, error: "")
+                    }
+            )
+            .map { (cardGroupsResult, ignoringCardIdList) in
+                cardGroupsResult.filter {
+                    // should not contain in session ignoring list and the permanent ignoring list
+                    !ignoringCardIdList.map(\.id).contains(Int64($0.id)) && !self.sessionIgnoredCardIdList.contains($0.id)
                 }
             }
             .sink { result in
@@ -40,7 +53,6 @@ class ContextualCardViewModel: ObservableObject {
                     self.alertTitle = error.localizedDescription
                     self.isAlertPresenting = true
                 case .finished:
-                    print("finished")
                     self.alertTitle = ""
                 }
                 
@@ -51,5 +63,26 @@ class ContextualCardViewModel: ObservableObject {
             }.store(in: &cancellables)
     }
     
+    func remindLaterBigDisplayCard(id: Int) {
+        sessionIgnoredCardIdList.append(id)
+        cardGroups = cardGroups?.filter{ $0.id != id }
+    }
+    
+    func dismissBigDisplaycard(id: Int) {
+        bigDisplayCardReminderRepo.insert(id: id)
+            .sink { result in
+                switch result {
+                case .failure(let error):
+                    self.alertTitle = error.localizedDescription
+                    self.isAlertPresenting = true
+                default:
+                    break
+                }
+            } receiveValue: { _ in
+                self.cardGroups = self.cardGroups?.filter { $0.id != id }
+            }
+            .store(in: &cancellables)
+
+    }
     
 }

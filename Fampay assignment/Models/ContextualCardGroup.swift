@@ -8,14 +8,10 @@
 import Foundation
 
 struct ContextualCardGroup: Decodable, Identifiable {
-    var id = UUID()
+    var id: Int
     let designType: ContextualCardDesignTypes
     let name: String
     let height: Int?
     let isScrollable: Bool
     let cards: [ContextualCard]?
-    
-    enum CodingKeys: String, CodingKey {
-        case designType, name, height, isScrollable, cards
-    }
 }
