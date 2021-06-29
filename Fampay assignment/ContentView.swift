@@ -11,6 +11,7 @@ import CoreData
 struct ContentView: View {
     
     @State var isRefreshing = false
+    @StateObject var viewModel = ContextualCardViewModel()
     
     var body: some View {
         GeometryReader { parentProxy in
@@ -24,25 +25,26 @@ struct ContentView: View {
                 .offset(y: -10)
                 .frame(height: 40)
                 VStack {
-                    RefreshableScrollView(isRefreshing: $isRefreshing) {
+                    RefreshableScrollView(isRefreshing: $viewModel.isRefreshing) {
                         VStack {
                             let width = parentFrame.width - 40
-                            ForEach(placeholderData) { cardData in
+                            ForEach(viewModel.cardGroups ?? []) { cardData in
                                 ContextualCardView(cardGroup: cardData, width: width)
                                     .padding(.top, 2)
                             }
                         }
                         .padding(.bottom, 300)
                     } onRefresh: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            isRefreshing = false
-                        }
+                        viewModel.fetchCardsGroup()
                     }
                     .padding(.horizontal, 20)
                     .background(Color("background-gray"))
                 }
             }
             .ignoresSafeArea(.container, edges: .bottom)
+            .onAppear {
+                viewModel.fetchCardsGroup()
+            }
         }
     }
 }

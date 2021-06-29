@@ -58,7 +58,7 @@ struct RefreshableScrollView<Content: View>: View {
                     && value > offsetForRefreshTrigger // trigger refresh once it crosses the offset
                     && !isRefreshing {
                     
-                    isRefreshing = true
+//                    isRefreshing = true
                     onRefreshAction()
                     canRefresh = false
                 }

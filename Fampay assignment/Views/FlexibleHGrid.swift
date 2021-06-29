@@ -63,14 +63,3 @@ struct FlexibleHGrid<Data: Collection, Content: View>: View where Data.Element: 
     }
     
 }
-
-//struct _FlexibleTextView<Data: Collection, Content: View>: View where Data.Element: Hashable {
-//    @Binding var availableWidth: CGFloat
-//
-//
-//    var body : some View {
-//
-//    }
-//
-//
-//}

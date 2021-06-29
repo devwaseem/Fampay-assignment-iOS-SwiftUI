@@ -42,7 +42,7 @@
 		75FCB14426885DC5007045BC /* View + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCB14326885DC5007045BC /* View + Extensions.swift */; };
 		75FCB14726886516007045BC /* BigDisplayContextualCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCB14626886516007045BC /* BigDisplayContextualCard.swift */; };
 		75FCB149268865A1007045BC /* SmallCardWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCB148268865A1007045BC /* SmallCardWithArrow.swift */; };
-		75FCB14B268908C6007045BC /* BigDisplayContextualCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCB14A268908C6007045BC /* BigDisplayContextualCardViewModel.swift */; };
+		75FCB14B268908C6007045BC /* ContextualCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FCB14A268908C6007045BC /* ContextualCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,7 @@
 		75FCB14326885DC5007045BC /* View + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extensions.swift"; sourceTree = "<group>"; };
 		75FCB14626886516007045BC /* BigDisplayContextualCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDisplayContextualCard.swift; sourceTree = "<group>"; };
 		75FCB148268865A1007045BC /* SmallCardWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCardWithArrow.swift; sourceTree = "<group>"; };
-		75FCB14A268908C6007045BC /* BigDisplayContextualCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigDisplayContextualCardViewModel.swift; sourceTree = "<group>"; };
+		75FCB14A268908C6007045BC /* ContextualCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextualCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 			children = (
 				757B29C42689A2F200EEE779 /* Placholder data */,
 				75FCB14226885DB1007045BC /* Extensions */,
-				75ACBCD626876DF40026CFAF /* Utilities */,
+				75ACBCD626876DF40026CFAF /* Network */,
 				75ACBCD526876D510026CFAF /* ViewModels */,
 				75ACBCD426876D4B0026CFAF /* Models */,
 				75ACBCD326876D480026CFAF /* Views */,
@@ -245,17 +245,17 @@
 		75ACBCD526876D510026CFAF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				75FCB14A268908C6007045BC /* BigDisplayContextualCardViewModel.swift */,
+				75FCB14A268908C6007045BC /* ContextualCardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		75ACBCD626876DF40026CFAF /* Utilities */ = {
+		75ACBCD626876DF40026CFAF /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				75ACBCE5268775040026CFAF /* FampayAPISimulator.swift */,
 			);
-			path = Utilities;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		75ACBCE72687754E0026CFAF /* Utlities_tests */ = {
@@ -446,7 +446,7 @@
 			files = (
 				757EE251268A4B70000CD124 /* ContextualCardView.swift in Sources */,
 				75ACBCDE268774680026CFAF /* ContextualCardImage.swift in Sources */,
-				75FCB14B268908C6007045BC /* BigDisplayContextualCardViewModel.swift in Sources */,
+				75FCB14B268908C6007045BC /* ContextualCardViewModel.swift in Sources */,
 				757EE24D268A3749000CD124 /* SmallDisplayCard.swift in Sources */,
 				75ACBCB02687662F0026CFAF /* Fampay_assignment.xcdatamodeld in Sources */,
 				75FCB14726886516007045BC /* BigDisplayContextualCard.swift in Sources */,

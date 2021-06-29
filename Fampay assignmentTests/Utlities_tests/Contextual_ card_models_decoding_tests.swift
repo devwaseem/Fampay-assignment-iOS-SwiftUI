@@ -23,7 +23,7 @@ class ContextualCardModelDecodingTest: XCTestCase {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let result = try decoder.decode([String].self, from: api.data)
-//        XCTAssertNotNil(result)
+        XCTAssertNotNil(result)
         print(result)
     }
     
@@ -34,7 +34,6 @@ class ContextualCardModelDecodingTest: XCTestCase {
         var cardGroup: [ContextualCardGroup]?
         var networkError: NetworkError?
         
-//        let dataPublisher: AnyPublisher<ContextualCardGroup, NetworkError> = api.fetch(url: URL(string: "http://random.com")!)
         let dataPublisher: AnyPublisher<[ContextualCardGroup], NetworkError> = FampayAPISimulator.shared.fetch(url: URL(string: "http://www.mocky.io/v2/5ed79368320000a0cc27498b")!)
         dataPublisher.sink { completion in
             if case let .failure(error) = completion {
