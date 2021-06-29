@@ -25,7 +25,7 @@ let cardData = ContextualCard(name: "Name",
                                                               fontStyle: .italic)
                                                     ]),
                               fallbackTitle: "title",
-                              formattedDescription: nil,
+                              formattedDescription: .init(text: "Small display", entities: []),
                               fallbackDescription: "This is a sample text for the subtitle that you can add to contextual cards",
                               icon: nil,
                               url: URL(string: "https://google.com"),
@@ -37,3 +37,17 @@ let cardData = ContextualCard(name: "Name",
                                 ContextualCardCTA(text: "Action", backgroundColor: blackColor, url: nil, textColor: whiteColor),
                               ]
 )
+
+
+import Foundation
+
+let jsonDecoder: JSONDecoder = {
+    let jsonDecoder = JSONDecoder()
+    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+    return jsonDecoder
+}()
+
+let path = Bundle.main.path(forResource: "sample_response", ofType: "json")
+let data = FileManager.default.contents(atPath: path!)
+var placeholderData = try! jsonDecoder.decode([ContextualCardGroup].self, from: data!).filter { $0.designType != .unsupported }
+//placeholderData = placeholderData

@@ -10,21 +10,24 @@ import SwiftUI
 struct FormattedTextView: View {
     var formattedTitle: CTXCardFormattedText?
     var fallbackTitle: String?
-    let font: Font?
+    var foregroundColor: Color = .white
+    var font: Font? = nil
     
     @ViewBuilder
     var body: some View {
         if let formattedTitle = formattedTitle, formattedTitle.isValid() {
-            AttributedTextView(data: formattedTitle.getParsedEntities(), spacing: 0, alignment: HorizontalAlignment.leading) { entity in
-                _FormattedTextView(entity: entity, font: font)
+            FlexibleHGrid(data: formattedTitle.getParsedEntities(), spacing: 0, alignment: HorizontalAlignment.leading) { entity in
+                _FormattedTextView(entity: entity, font: font, foregroundColor: foregroundColor)
+                
             }
         } else if let fallbackTitle = fallbackTitle {
             HStack {
                 Text(fallbackTitle)
-                    .foregroundColor(.white)
+                    .foregroundColor(foregroundColor)
+                    .font(font)
+                    .background(Color.red)
                 Spacer()
             }
-            
         } else {
             Color.clear
         }
@@ -36,6 +39,7 @@ struct FormattedTextView: View {
 fileprivate struct _FormattedTextView: View {
     let entity: CTXCardFormattedTextEntity
     let font: Font?
+    var foregroundColor: Color = .white
     var body: some View {
         if entity.isClickable {
             Button(action: {
@@ -52,7 +56,7 @@ fileprivate struct _FormattedTextView: View {
     
     var FormattedText: some View {
         Text(entity.text)
-            .foregroundColor(entity.color?.color ?? .white)
+            .foregroundColor(entity.color?.color ?? foregroundColor)
             .font(font)
             .if(entity.fontStyle == .italic) { Text in
                 Text.italic()

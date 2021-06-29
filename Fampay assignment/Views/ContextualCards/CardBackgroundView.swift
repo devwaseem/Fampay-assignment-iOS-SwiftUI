@@ -11,19 +11,39 @@ import Kingfisher
 
 struct CardBackgroundView: View {
     
+    enum BackgroundType {
+        case image, icon
+    }
+    
     let cardData: ContextualCard
+    var backgroundType: BackgroundType = .image
     
     var body: some View {
-        if let backgroundImage = cardData.backgroundImage {
-            if backgroundImage.imageType == .external {
-                KFImage(cardData.backgroundImage?.imageUrl)
+        switch backgroundType {
+        case .icon:
+            getBackground(image: cardData.icon)
+        case .image:
+            getBackground(image: cardData.backgroundImage)
+        }
+    }
+    
+    @ViewBuilder
+    func getBackground(image: ContextualCardImage?) -> some View {
+        if let image = image {
+            if image.imageType == .external {
+                KFImage(image.imageUrl)
                     .resizable()
                     .frame(maxWidth: .infinity)
                     .aspectRatio(contentMode: .fill)
-            } else if let asset = cardData.backgroundImage?.assetType, backgroundImage.imageType == .asset   {
+            } else if let asset = cardData.backgroundImage?.assetType, image.imageType == .asset   {
                 Image(asset)
+            } else {
+                Color.clear
             }
-        }else {
+        } else if let backgroundGradient = cardData.backgroundGradient,
+                 let colors = backgroundGradient.colors?.compactMap({ $0.color }) {
+            AngularGradient(gradient: Gradient(colors: colors), center: .center, angle: .degrees(Double(backgroundGradient.angle ?? 0)))
+        } else {
             backgroundColor?.color ?? .clear
         }
     }

@@ -8,32 +8,32 @@
 import SwiftUI
 import Kingfisher
 
-struct BigDisplayContextualCardCarousel: View {
+struct BigDisplayContextualCard: View {
     
-    var isScrollable: Bool
-    let data: [ContextualCard]
+    let cardGroup: ContextualCardGroup
     let width: CGFloat
         
     var body: some View {
-        if isScrollable {
+        if cardGroup.isScrollable, let cards = cardGroup.cards {
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(0..<data.count) { idx in
-                        BigDisplayContextualCard(data: data[idx])
-                            .frame(width: width * 0.9)
+                    ForEach(0 ..< cards.count) { index in
+                        BigDisplayContextualSingleCard(data: cards[index])
+                            .frame(width: width * 0.9, height: width * 0.9 * 1.094)
                     }
                 }
                 .frame(maxWidth: .infinity)
             }
-        } else if data.count > 0 {
-            BigDisplayContextualCard(data: data[0])
+        } else if let cardData = cardGroup.cards?.first {
+            BigDisplayContextualSingleCard(data: cardData)
+                .frame(width: width, height: width * 1.094)
         } else {
-            Color.clear
+            EmptyView()
         }
     }
 }
 
-struct BigDisplayContextualCard: View {
+fileprivate struct BigDisplayContextualSingleCard: View {
     
     var data: ContextualCard
     
@@ -66,13 +66,9 @@ struct BigDisplayContextualCard: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .aspectRatio(0.914, contentMode: .fit)
         .background(Color.white)
         .cornerRadius(12)
         .clipped()
-//        .readSize { size in
-//            self.size = size
-//        }
     }
     
 }
@@ -137,6 +133,7 @@ private struct BigDisplayContextualCardContent: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 33)
+            .padding(.bottom, 12)
             
             VStack(alignment: .leading) {
                 FormattedTextView(formattedTitle: data.formattedDescription, fallbackTitle: data.fallbackDescription, font: .system(size: 12))
@@ -187,8 +184,7 @@ private struct BigDisplayContextualCardContent: View {
 
 struct BigDisplayContextualCard_Previews: PreviewProvider {
     static var previews: some View {
-        BigDisplayContextualCard(data: cardData)
-            .frame(width: 400)
+        BigDisplayContextualCard(cardGroup: placeholderData[0], width: 320)
             .previewLayout(PreviewLayout.fixed(width: 500, height: 500))
     }
 }

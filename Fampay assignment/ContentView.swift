@@ -26,10 +26,13 @@ struct ContentView: View {
                 VStack {
                     RefreshableScrollView(isRefreshing: $isRefreshing) {
                         VStack {
-                            SmallCardWithArrowView(isScrollable: true, cardData: [cardData, cardData], width: parentFrame.width - 40)
-                            BigDisplayContextualCardCarousel(isScrollable: false, data: [cardData, cardData, cardData], width: parentFrame.width - 40)
-                            .padding(.top, 20)
+                            let width = parentFrame.width - 40
+                            ForEach(placeholderData) { cardData in
+                                ContextualCardView(cardGroup: cardData, width: width)
+                                    .padding(.top, 2)
+                            }
                         }
+                        .padding(.bottom, 300)
                     } onRefresh: {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             isRefreshing = false

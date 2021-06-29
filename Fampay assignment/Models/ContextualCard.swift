@@ -82,18 +82,9 @@ struct CTXCardFormattedText: Decodable {
         
         var entitiesCopy = entities
         var newEntities = [CTXCardFormattedTextEntity]()
-//        getFilteredComponents().forEach { token in
-//            if token == "{}" && !entitiesCopy.isEmpty {
-//                var currentEntity = entitiesCopy.removeFirst()
-//                currentEntity.text += " "
-//                newEntities.append(currentEntity)
-//            } else {
-//                let spacedToken = token + " "
-//                newEntities.append(CTXCardFormattedTextEntity(text: spacedToken))
-//            }
-//        }
         
         let tokens = getFilteredComponents()
+                
         for (index, token) in tokens.enumerated() {
             if token == "{}" && !entitiesCopy.isEmpty {
                 var currentEntity = entitiesCopy.removeFirst()

@@ -46,7 +46,167 @@
         "bg_color": "#454aa6",
         "cta": [
           {
-            "text": "Action",
+            "text": "Open",
+            "bg_color": "#000000",
+            "other_url": "https://www.instagram.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "oth",
+            "url": "https://www.instagram.com/fampay.in/"
+          }
+        ]
+      }
+    ],
+    "is_scrollable": false
+  },
+  {
+    "id": 16,
+    "name": "Big display card",
+    "design_type": "HC9",
+    "card_type": 1,
+    "height": 100,
+    "cards": [
+      {
+        "name": "Big display card",
+        "title": "Big display card with action",
+        "formatted_title": {
+          "text": "{} {}",
+          "entities": [
+            {
+              "text": "Big display card",
+              "type": "generic_text",
+              "color": "#fbaf03",
+              "other_url": "https://example.org/link1",
+              "url_choice": "oth",
+              "url": "https://example.org/link1"
+            },
+            {
+              "text": "with action",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "description": "This is a sample text for the subtitle that you can add to contextual cards",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "text": "This is a sample text for the subtitle that you can add to contextual cards",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_image": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/2a650f966e1f4a2e81bdbbb118fb2e73.png",
+          "asset_type": "test1"
+        },
+        "bg_color": "#454aa6",
+        "cta": [
+          {
+            "text": "Open",
+            "bg_color": "#000000",
+            "other_url": "https://www.instagram.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "oth",
+            "url": "https://www.instagram.com/fampay.in/"
+          }
+        ]
+      },
+      {
+        "name": "Big display card",
+        "title": "Big display card with action",
+        "formatted_title": {
+          "text": "{} {}",
+          "entities": [
+            {
+              "text": "Big display card",
+              "type": "generic_text",
+              "color": "#fbaf03",
+              "other_url": "https://example.org/link1",
+              "url_choice": "oth",
+              "url": "https://example.org/link1"
+            },
+            {
+              "text": "with action",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "description": "This is a sample text for the subtitle that you can add to contextual cards",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "text": "This is a sample text for the subtitle that you can add to contextual cards",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_image": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/5cb0d958af964354a728dd5c04537e1d.png",
+          "asset_type": "test1"
+        },
+        "bg_color": "#454aa6",
+        "cta": [
+          {
+            "text": "Open",
+            "bg_color": "#000000",
+            "other_url": "https://www.instagram.com/fampay.in/",
+            "text_color": "#ffffff",
+            "url_choice": "oth",
+            "url": "https://www.instagram.com/fampay.in/"
+          }
+        ]
+      },
+      {
+        "name": "Big display card",
+        "title": "Big display card with action",
+        "formatted_title": {
+          "text": "{} {}",
+          "entities": [
+            {
+              "text": "Big display card",
+              "type": "generic_text",
+              "color": "#fbaf03",
+              "other_url": "https://example.org/link1",
+              "url_choice": "oth",
+              "url": "https://example.org/link1"
+            },
+            {
+              "text": "with action",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "description": "This is a sample text for the subtitle that you can add to contextual cards",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "text": "This is a sample text for the subtitle that you can add to contextual cards",
+              "type": "generic_text",
+              "color": "#ffffff"
+            }
+          ]
+        },
+        "url": "https://www.facebook.com/fampay.in/",
+        "bg_image": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/5cb0d958af964354a728dd5c04537e1d.png",
+          "asset_type": "test1"
+        },
+        "bg_color": "#454aa6",
+        "cta": [
+          {
+            "text": "Open",
             "bg_color": "#000000",
             "other_url": "https://www.instagram.com/fampay.in/",
             "text_color": "#ffffff",
@@ -236,6 +396,66 @@
         },
         "url": "https://www.facebook.com/fampay.in/",
         "bg_color": "#ffffff"
+      },
+      {
+        "name": "small display card",
+        "title": "Small display card",
+        "formatted_title": {
+          "text": "Small display card",
+          "entities": []
+        },
+        "description": "John",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "type": "generic_text",
+              "color": "#000000",
+              "font_style": "underline",
+              "url_choice": "fam",
+              "font_family": "met_regular",
+              "url": "http://example.com/link1",
+              "text": "John"
+            }
+          ]
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/13c07b132b69446cb25f05170c8c00bd.png",
+          "asset_type": "arya dp"
+        },
+        "url": "https://www.instagram.com/fampay.in/",
+        "bg_color": "#fbaf03"
+      },
+      {
+        "name": "small display card",
+        "title": "Valar morghulis",
+        "formatted_title": {
+          "text": "Small display card",
+          "entities": []
+        },
+        "description": "John",
+        "formatted_description": {
+          "text": "{}",
+          "entities": [
+            {
+              "type": "generic_text",
+              "color": "#000000",
+              "font_style": "underline",
+              "url_choice": "fam",
+              "font_family": "met_regular",
+              "url": "http://example.com/link1",
+              "text": "John"
+            }
+          ]
+        },
+        "icon": {
+          "image_type": "ext",
+          "image_url": "https://westeros-staging.s3.amazonaws.com/media/images/generic/13c07b132b69446cb25f05170c8c00bd.png",
+          "asset_type": "arya dp"
+        },
+        "url": "https://www.instagram.com/fampay.in/",
+        "bg_color": "#d0bf03"
       },
       {
         "name": "small display card",

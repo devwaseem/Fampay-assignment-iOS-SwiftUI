@@ -10,11 +10,22 @@ import SwiftUI
 @main
 struct Fampay_assignmentApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @State var isShowingAlert = false
+    @State var alertTitle = ""
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onOpenURL { url in
+                    print(url)
+                    alertTitle = "handle deeplink \(url)"
+                    isShowingAlert = true
+                }
+                .alert(isPresented: $isShowingAlert) {
+                    Alert(title: Text(alertTitle))
+                }
         }
     }
 }

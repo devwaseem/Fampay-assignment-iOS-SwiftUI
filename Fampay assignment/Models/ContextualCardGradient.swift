@@ -9,5 +9,5 @@ import Foundation
 
 struct ContextualCardGradient: Decodable {
     let colors: [HexColor]?
-    let angle: Int
+    let angle: Int?
 }

@@ -41,8 +41,9 @@ struct RefreshableScrollView<Content: View>: View {
                     .progressViewStyle(CircularProgressViewStyle())
                     .animation(.easeInOut)
                     .offset(y: isRefreshing ? 24 : -200)
+                    .zIndex(-1)
                 Spacer()
-            }
+            }.clipped()
                         
             ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: showsIndicators) {
                 offsetReader

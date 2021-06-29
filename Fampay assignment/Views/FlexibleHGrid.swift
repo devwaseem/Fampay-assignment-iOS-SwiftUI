@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AttributedTextView<Data: Collection, Content: View>: View where Data.Element: Hashable {
+struct FlexibleHGrid<Data: Collection, Content: View>: View where Data.Element: Hashable {
     
     let data: Data
     let spacing: CGFloat
@@ -37,7 +37,7 @@ struct AttributedTextView<Data: Collection, Content: View>: View where Data.Elem
                         Spacer()
                     }
                 }
-            }.frame(width: availableWidth)
+            }.frame(maxWidth: availableWidth)
         }
     }
     
@@ -59,7 +59,6 @@ struct AttributedTextView<Data: Collection, Content: View>: View where Data.Elem
             
             remainingWidth = remainingWidth - (elementSize.width + spacing)
         }
-        
         return rows
     }
     

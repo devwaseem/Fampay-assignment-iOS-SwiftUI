@@ -9,25 +9,24 @@ import SwiftUI
 
 struct SmallCardWithArrowView: View {
     
-    let isScrollable: Bool
-    let cardData: [ContextualCard]
+    let cardGroup: ContextualCardGroup
     let width: CGFloat
     
-    
     var body: some View {
-        if isScrollable {
+        if cardGroup.isScrollable, let cards = cardGroup.cards {
             ScrollView(.horizontal) {
                 HStack {
-                    ForEach(0..<cardData.count) { idx in
-                        SmallCardWithArrowSingleView(data: cardData[idx])
-                            .frame(width: width * 0.9)
+                    ForEach(0 ..< cards.count) { idx in
+                        SmallCardWithArrowSingleView(data: cards[idx])
+                            .frame(width: width * 0.9, height: width * 0.188)
                     }
                 }.frame(maxWidth: .infinity)
             }
-        } else if cardData.count > 0 {
-            SmallCardWithArrowSingleView(data: cardData[0])
+        } else if let card = cardGroup.cards?.first {
+            SmallCardWithArrowSingleView(data: card)
+                .frame(height: width * 0.188)
         } else {
-            Color.clear
+            EmptyView()
         }
     }
     
@@ -36,16 +35,14 @@ struct SmallCardWithArrowView: View {
 fileprivate struct SmallCardWithArrowSingleView: View {
     
     let data: ContextualCard
-        
+    
     var body: some View {
         HStack {
-            CardBackgroundView(cardData: data)
+            CardBackgroundView(cardData: data, backgroundType: .icon)
                 .aspectRatio(1, contentMode: .fit)
-                .background(Color.red)
                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
             HStack {
-                Text("Small card with arrow")
-                    .multilineTextAlignment(.leading)
+                FormattedTextView(formattedTitle: data.formattedTitle, fallbackTitle: data.fallbackTitle, foregroundColor: .black, font: .system(size: 14))
                     .lineLimit(1)
                 Spacer(minLength: 0)
             }
@@ -56,14 +53,20 @@ fileprivate struct SmallCardWithArrowSingleView: View {
         }
         .padding(.leading, 20)
         .frame(height: 60)
-        .background(Color.white)
+        .background(data.backgroundColor?.color ?? .white)
         .cornerRadius(12)
+        .onTapGesture {
+            let app = UIApplication.shared
+            if let url = cardData.url, app.canOpenURL(url) {
+                app.open(url, options: [:])
+            }
+        }
     }
 }
 
 struct SmallCardWithArrow_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCardWithArrowView(isScrollable: true, cardData: [cardData, cardData], width: 350)
-            .previewLayout(PreviewLayout.fixed(width: 350, height: 60))
+        SmallCardWithArrowView(cardGroup: placeholderData[1], width: 350)
+            .previewLayout(PreviewLayout.fixed(width: 350, height: 120))
     }
 }
