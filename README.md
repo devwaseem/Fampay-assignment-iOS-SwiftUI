@@ -10,7 +10,7 @@
 ### 👽 3rd party
  - [KingFisher](https://github.com/onevcat/Kingfisher) - To load images asynchronously
 
-## Architecture
+## 🏛 Architecture
  - MVVM using Combine
 
 ## ⚠️ Note
