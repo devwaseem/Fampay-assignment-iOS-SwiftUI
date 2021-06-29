@@ -52,29 +52,6 @@ struct CTXCardFormattedText: Decodable {
         }
     }
     
-//    func getParsedEntities() -> [CTXCardFormattedTextEntity] {
-//        if !isValid() {
-//            return entities
-//        }
-//
-//        var entitiesCopy = entities
-//        var newEntities = [CTXCardFormattedTextEntity]()
-//        getFilteredComponents().forEach { token in
-//            if token.isEmpty {
-//                return
-//            }
-//            if entitiesCopy.isEmpty {
-//                newEntities.append(CTXCardFormattedTextEntity(text: token))
-//            } else {
-//                let currentEntity = entitiesCopy.removeFirst()
-//                newEntities.append(CTXCardFormattedTextEntity(text: token))
-//                newEntities.append(currentEntity)
-//            }
-//        }
-//
-//        return newEntities
-//    }
-    
     func getParsedEntities() -> [CTXCardFormattedTextEntity] {
         if !isValid() {
             return entities
@@ -93,6 +70,19 @@ struct CTXCardFormattedText: Decodable {
             } else {
                 let spacedToken = token + (index == tokens.count - 1 ? "" : " ")
                 newEntities.append(CTXCardFormattedTextEntity(text: spacedToken))
+            }
+        }
+        
+        // if there is only one enitity for FlexibleView to render, it will ignore the frame width and overflow,
+        // To fix the problem, we split the single sentence entity into multiple words entity
+        // so that FlexibleView will calculate the view accordingly
+        if newEntities.count == 1, let singleEntity = newEntities.first {
+            let text = singleEntity.text
+            let textList = text.split(separator: " ")
+            return textList.map {
+                var singleEntityCopy = singleEntity
+                singleEntityCopy.text = String($0) + " "
+                return singleEntityCopy
             }
         }
         
