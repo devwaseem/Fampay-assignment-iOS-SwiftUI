@@ -10,7 +10,6 @@ import CoreData
 
 struct ContentView: View {
     
-    @State var isRefreshing = false
     @StateObject var viewModel = ContextualCardViewModel(bigDisplayCardReminderRepo: .init())
     
     var body: some View {
@@ -40,6 +39,9 @@ struct ContentView: View {
                     }
                     .padding(.horizontal, 20)
                     .background(Color("background-gray"))
+                }
+                .alert(isPresented: $viewModel.isAlertPresenting) {
+                    Alert(title: Text(viewModel.alertTitle))
                 }
             }
             .ignoresSafeArea(.container, edges: .bottom)

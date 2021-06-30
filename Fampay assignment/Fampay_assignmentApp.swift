@@ -19,7 +19,6 @@ struct Fampay_assignmentApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onOpenURL { url in
-                    print(url)
                     alertTitle = "handle deeplink \(url)"
                     isShowingAlert = true
                 }
