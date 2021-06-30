@@ -16,7 +16,7 @@
 ## ⚠️ Note
 ### [`FormattedTextView`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/ContextualCards/BigDisplayContextualCard/FormattedTextView.swift)
 SwiftUI doesn't support **Attributed strings** (iOS 14 and below), Also the **NSAttributedString + UITextView** doesn't support different color for links.
-To acheive the required result, the Formatted title and Formatted Desription views uses **[`FlexibleHGrid`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/FlexibleHGrid.swift)** to layout different Views stacked together horizonatally. This prones to error because of variable length of text. The workarounds have been built to solve some inconsistencies.
+To acheive the required result, the Formatted title and Formatted Desription views uses **[`FlexibleHGrid`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/FlexibleHGrid.swift)** to layout different Views stacked together horizonatally. This is prone to error because of variable length of text. The workarounds have been built to solve some inconsistencies.
 
 ### [`RefreshableScrollView`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/RefreshableScrollView.swift)
 Since there is no support for refreshing in SwiftUI (iOS 14 and below), Custom [`RefreshableScrollView`](https://github.com/devwaseem/Fampay-assignment-iOS-SwiftUI/blob/main/Fampay%20assignment/Views/RefreshableScrollView.swift) is implemented.
