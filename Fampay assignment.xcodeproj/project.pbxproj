@@ -14,6 +14,7 @@
 		7566B4BD268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B4BB268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift */; };
 		7566B4C2268B9BE200066723 /* PlaceholderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7566B4C1268B9BE200066723 /* PlaceholderData.swift */; };
 		7566B4C4268B9C0B00066723 /* sample_response.json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7566B4C3268B9C0B00066723 /* sample_response.json.txt */; };
+		7576EDD8268E2F2C0048B8CC /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7576EDD7268E2F2C0048B8CC /* AnyError.swift */; };
 		757B29CB2689B9AE00EEE779 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B29CA2689B9AE00EEE779 /* UIFont + Extensions.swift */; };
 		757EE2432689E61B000CD124 /* FlexibleHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE2422689E61B000CD124 /* FlexibleHGrid.swift */; };
 		757EE2462689F5DF000CD124 /* FormattedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757EE2452689F5DF000CD124 /* FormattedTextView.swift */; };
@@ -73,6 +74,7 @@
 		7566B4BB268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDBigDisplayCardReminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7566B4C1268B9BE200066723 /* PlaceholderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderData.swift; sourceTree = "<group>"; };
 		7566B4C3268B9C0B00066723 /* sample_response.json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_response.json.txt; sourceTree = "<group>"; };
+		7576EDD7268E2F2C0048B8CC /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		757B29CA2689B9AE00EEE779 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		757EE2422689E61B000CD124 /* FlexibleHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleHGrid.swift; sourceTree = "<group>"; };
 		757EE2452689F5DF000CD124 /* FormattedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedTextView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				75ACBCDF2687747A0026CFAF /* ContextualCardGradient.swift */,
 				75ACBCE12687748D0026CFAF /* ContextualCardCTA.swift */,
 				75ACBD0226879BD30026CFAF /* HexColor.swift */,
+				7576EDD7268E2F2C0048B8CC /* AnyError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				757B29CB2689B9AE00EEE779 /* UIFont + Extensions.swift in Sources */,
 				75ACBCA62687662D0026CFAF /* ContentView.swift in Sources */,
 				757EE2432689E61B000CD124 /* FlexibleHGrid.swift in Sources */,
+				7576EDD8268E2F2C0048B8CC /* AnyError.swift in Sources */,
 				75ACBCF3268780920026CFAF /* NetworkError.swift in Sources */,
 				7566B4BD268B82AB00066723 /* CDBigDisplayCardReminder+CoreDataClass.swift in Sources */,
 				75ACBCA42687662D0026CFAF /* Fampay_assignmentApp.swift in Sources */,

@@ -31,13 +31,11 @@ class ContextualCardViewModel: ObservableObject {
             .fetch(url: mockApiUrl)
         
         cardGroupPublisher
-            .receive(on: DispatchQueue.main)
+            .mapError(AnyError.init(error:)) // Type erasing the error since we don't need the specific type
             .zip(bigDisplayCardReminderRepo.getAll()
-                    .replaceEmpty(with: [])
+                    .replaceError(with: []) // This is subjective, I decided to not show errors related to Coredata.
                     .eraseToAnyPublisher()
-                    .mapError { _ in
-                        NetworkError.unknown(code: 0, error: "")
-                    }
+                    .mapError(AnyError.init(error:)) // Type erasing even though it will not execute to match the Upstream Type
             )
             .map { (cardGroupsResult, ignoringCardIdList) in
                 cardGroupsResult.filter {
@@ -45,6 +43,7 @@ class ContextualCardViewModel: ObservableObject {
                     !ignoringCardIdList.map(\.id).contains(Int64($0.id)) && !self.sessionIgnoredCardIdList.contains($0.id)
                 }
             }
+            .receive(on: DispatchQueue.main)
             .sink { result in
                 
                 self.isRefreshing = false
