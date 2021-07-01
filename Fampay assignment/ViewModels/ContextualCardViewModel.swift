@@ -35,7 +35,7 @@ class ContextualCardViewModel: ObservableObject {
             .zip(bigDisplayCardReminderRepo.getAll()
                     .replaceError(with: []) // This is subjective, I decided to not show errors related to Coredata.
                     .eraseToAnyPublisher()
-                    .mapError(AnyError.init(error:)) // Type erasing even though it will not execute to match the Upstream Type
+                    .mapError(AnyError.init(error:)) // Type erasing (even though it will not execute) to match the Upstream Type
             )
             .map { (cardGroupsResult, ignoringCardIdList) in
                 cardGroupsResult.filter {
